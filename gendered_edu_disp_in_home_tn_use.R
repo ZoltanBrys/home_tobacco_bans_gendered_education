@@ -10,31 +10,29 @@
 
 
 # ==== ENVIRONMENT, PACKAGES, COMMON FOLDERS/FILES AND FUNCTIONS ====
-# deleting the memory
-  rm(list = ls())
+rm(list = ls())   #clear environment
+if (!("stats" %in% (.packages()) )) stop("R Environment is not fully loaded!") #check R environment
 
-# checking R
-  if (!("stats" %in% (.packages()) )) stop("R Environment is not fully loaded!")
-
-# raw data URL from KDK data repository
-  fn_input <- "2023_dataset.RDS" #downloadable by researchers from KDKD
+fn_input <- "./2023_dataset.RDS" #downloadable by researchers from KDKD
 
 # packages
-  library(gtsummary)
-  library(parallel)
-  library(precrec)
-  library(pwr)        #for two sample Z test
-  library(DescTools)  #for cross-tabulation stat
-  library(effectsize) #for effect size
-  library(coin)       #for Wilcox r
-  library(rstatix)    #for Wilcox 2
-  library(Matrix)     #for lasso.
-  library(glmnet)     #for lasso.
-  library(carData)    #for bootstrap.
-  library(car)        #for bootstrap.
-  library(ggplot2)    #for plots
-  library(fastshap)   #for Shapley
-  library(margins)
+library("dplyr")
+library("gtsummary")
+library("parallel")
+library("precrec")
+library("pwr")        
+library("DescTools")  
+library("effectsize") 
+library("coin")      
+library("rstatix")    
+library("Matrix")    
+library("glmnet")    
+library("carData")    
+library("car")        
+library("ggplot2")
+library("ggpubr")
+library("fastshap")   
+library("margins")
 
 #special auxiliary function
   #df = input data frame of eval tables
@@ -64,7 +62,7 @@
       
     }
    return(sum_res)
-  }
+  } 
   
 # pred wrapper for Shapley
   pred_wrapper <- function(object, newdata) {
@@ -75,7 +73,7 @@ prop_test <- function(x, y) {
   table_data <- table(x, y)
   results <- lapply(1:ncol(table_data), function(col_idx) {
     group <- colnames(table_data)[col_idx]
-    successes <- table_data[2, col_idx]  # Assuming 'TRUE' corresponds to row 2
+    successes <- table_data[2, col_idx]  
     total <- colSums(table_data)[col_idx]
     test_result <- prop.test(successes, total)
     data.frame(
@@ -161,7 +159,7 @@ calculate_jaccard_ci <- function(vec1, vec2, n_bootstrap = 1000, conf_level = 0.
 
   sum(filt) #number of selected couples
 
-#E19 is the cohabiting couples dataset
+#var E19 is the cohabiting couples dataset
   E19 <- df_survey[filt,]
 
 #handling critical non-responses
@@ -172,7 +170,7 @@ calculate_jaccard_ci <- function(vec1, vec2, n_bootstrap = 1000, conf_level = 0.
 
   sum(E19$cri_fil) #31 person do not reply to critical question
 
-#F19 is the cohahibting couples who provided answers to all critical questions
+#var F19 is the cohahibting couples who provided answers to all critical questions
   F19 <- subset(E19, cri_fil==FALSE)
 
 #cleaning unneccassary variables and data frames
@@ -403,9 +401,11 @@ rm(F19)
   prop.test(x = c(table(G19$y2)[2]), n = sum(table(G19$y2)))
 
   prop.test(x = c(table(G19$y1)[2], table(G19$y2)[2]), n = c(sum(table(G19$y1)), sum(table(G19$y2))))
+  mcnemar.test(table(G19$y1, G19$y2)) #since paired data
 
   h1<-pwr::ES.h(p1,p2)
   h1
+
   pwr.p.test(h=h1,n=sum(table(G19$y1)),sig.level=0.05,alternative="two.sided")
 
 #prevalence of smoking ban and vaping ban and difference -- Table 2
