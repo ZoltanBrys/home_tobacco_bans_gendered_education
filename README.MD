@@ -9,7 +9,7 @@
 -  fastshap 0.1.1 : Greenwell B (2024). _fastshap: Fast Approximate Shapley Values_. R package version 0.1.1,  <https://CRAN.R-project.org/package=fastshap>.
 
 ### citation of the repository
- If you use the code, please cite this repository and/or paper as: (anonimized)
+ If you use the code, please cite this repository and/or paper as: (anonimized for the review process)
 
 ### licence : CC-BY-NC-ND 4.0 
 Prohibition on Use by Tobacco Companies and their Affiliates
