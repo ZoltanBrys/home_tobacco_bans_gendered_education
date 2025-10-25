@@ -606,9 +606,6 @@ at_xvar_labels <- list(
                            nfolds = 4,    
                            type.measure = "deviance",
                            relax = FALSE)
-        
-        #1/2 se value
-        sm_lam <- cv_sm$lambda[which.min(abs(cv_sm$lambda - ((cv_sm$lambda.min + cv_sm$lambda.1se)*0.5)))]
         sm_lam <- cv_sm$lambda.min  
     
         sm1 <- glmnet(x1s, y1, 
@@ -630,9 +627,6 @@ at_xvar_labels <- list(
                            nfolds = 4,    
                            type.measure = "deviance",
                            relax = FALSE)
-        
-        #1/2 se lam
-        vm_lam <- cv_vm$lambda[which.min(abs(cv_vm$lambda - ((cv_vm$lambda.min + cv_vm$lambda.1se)*0.5)))]
         vm_lam <- cv_vm$lambda.min  
         
         vm1 <- glmnet(x1s, y2, 
