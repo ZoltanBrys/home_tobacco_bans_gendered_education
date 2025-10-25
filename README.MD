@@ -1,6 +1,14 @@
 ### about
- R-syntax for the study: 
- Gendered educational disparities and in-home smoking and use of electronic tobacco/nicotine devices among cohabiting couples: findings from a Hungarian cross-sectional survey
+ R-syntax for the study: Gendered educational disparities and in-home smoking and use of electronic tobacco/nicotine devices among cohabiting couples: findings from a Hungarian cross-sectional survey
+
+
+### citation of the article 
+Brys Z, Pénzes M, Békés V, et al. Tob Control Epub ahead of print. <https://doi.org/10.1136/tc-2025-059333>
+
+
+### dataset
+The dataset is available to academic researchers upon request from the Research Documentation Centre (RDC) at the Centre for Social Sciences, with access restricted to prevent misuse by the tobacco industry.
+
 
 ### key dependencies
 -  DescTools 0.99.53 : Signorell A (2024). _DescTools: Tools for Descriptive Statistics_. R package version 0.99.53, <https://CRAN.R-project.org/package=DescTools>.
@@ -8,12 +16,10 @@
 -  glmnet 4.1-8 : Friedman J, Tibshirani R, Hastie T (2010). “Regularization Paths for Generalized Linear Models via Coordinate Descent.” _Journal of Statistical Software_, *33*(1), 1-22. doi:10.18637/jss.v033.i01 <https://doi.org/10.18637/jss.v033.i01>.
 -  fastshap 0.1.1 : Greenwell B (2024). _fastshap: Fast Approximate Shapley Values_. R package version 0.1.1,  <https://CRAN.R-project.org/package=fastshap>.
 
-### citation of the article 
-- Brys Z, Pénzes M, Békés V, et al. Tob Control Epub ahead of print. <https://doi.org/10.1136/tc-2025-059333>
 
 ### licence : CC-BY-NC-ND 4.0 
 Prohibition on Use by Tobacco Companies and their Affiliates
-This software is freely available under the terms of CC-BY-NC-NC 4.0 license, except for use by tobacco companies and their commercial and non-commerical affiliates. 
+This software is freely available under the terms of CC-BY-NC-ND 4.0 license, except for use by tobacco companies and their commercial and non-commerical affiliates. 
 Tobacco companies and their affiliates are prohibited from using this software, directly or indirectly, for the development, promotion, or sale of tobacco/nicotine products or any related activities. 
 This restriction applies to all entities engaged in the tobacco industry, including their subsidiaries, affiliates, and partners.
 For the purposes of this clause, "Tobacco Companies" shall mean any entity engaged in the production, distribution, or sale of tobacco products, 
