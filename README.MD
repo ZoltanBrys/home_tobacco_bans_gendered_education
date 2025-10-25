@@ -8,8 +8,8 @@
 -  glmnet 4.1-8 : Friedman J, Tibshirani R, Hastie T (2010). “Regularization Paths for Generalized Linear Models via Coordinate Descent.” _Journal of Statistical Software_, *33*(1), 1-22. doi:10.18637/jss.v033.i01 <https://doi.org/10.18637/jss.v033.i01>.
 -  fastshap 0.1.1 : Greenwell B (2024). _fastshap: Fast Approximate Shapley Values_. R package version 0.1.1,  <https://CRAN.R-project.org/package=fastshap>.
 
-### citation of the repository
- If you use the code, please cite this repository and/or paper as: (anonimized for the review process)
+### citation of the article 
+- Brys Z, Pénzes M, Békés V, et al. Tob Control Epub ahead of print. <https://doi.org/10.1136/tc-2025-059333>
 
 ### licence : CC-BY-NC-ND 4.0 
 Prohibition on Use by Tobacco Companies and their Affiliates
